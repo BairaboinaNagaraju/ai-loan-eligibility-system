@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - JWT_SECRET_KEY=b3a4a835b62b7cd493a1c8f61596eb4c02cf3c9597ad89ef7dc830c2394747eb
+    volumes:
+      - loan-data:/app/db
+      - loan-models:/app/models
+
+volumes:
+  loan-data:
+  loan-models:
