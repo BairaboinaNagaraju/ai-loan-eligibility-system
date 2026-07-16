@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: ai-loan-eligibility-system
+    env: docker
+    plan: free
+    region: oregon
+    envVars:
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: PORT
+        value: 10000
